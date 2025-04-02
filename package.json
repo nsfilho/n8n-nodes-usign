@@ -1,6 +1,6 @@
 {
 	"name": "@nsfilho/n8n-nodes-usign",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "uSign Node for N8N",
 	"keywords": [
 		"n8n-community-node-package"
@@ -39,7 +39,7 @@
 	"n8n": {
 		"n8nNodesApiVersion": 1,
 		"credentials": [
-			"dist/credentials/USignApi/USignApi.credentials.js"
+			"dist/credentials/USignApi.credentials.js"
 		],
 		"nodes": [
 			"dist/nodes/USign/USign.node.js"
