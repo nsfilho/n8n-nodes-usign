@@ -1,7 +1,7 @@
 {
 	"name": "@nsfilho/n8n-nodes-usign",
 	"version": "0.1.0",
-	"description": "",
+	"description": "uSign Node for N8N",
 	"keywords": [
 		"n8n-community-node-package"
 	],
