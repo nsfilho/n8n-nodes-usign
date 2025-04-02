@@ -169,10 +169,16 @@ export class USign implements INodeType {
 			switch (operation) {
 				case 'find':
 					const allRecords = [];
-					for (let page = 1; (!loadAll && allRecords.length < limit) || loadAll; page += 1) {
+					for (
+						let page = 1;
+						(!loadAll && allRecords.length < limit) || loadAll;
+						page += 1
+					) {
 						let perPage = !loadAll && limit < 100 ? limit : 100;
 						perPage =
-							!loadAll && allRecords.length + perPage > limit ? limit - allRecords.length : perPage;
+							!loadAll && allRecords.length + perPage > limit
+								? limit - allRecords.length
+								: perPage;
 						const url = `${urlBase}/${entity}/?noCache=true&tree=${allSubdomains ? 'true' : 'false'}&perPage=${perPage}&page=${page}`;
 						this.logger.debug(`URL: ${url}`);
 						const records = await axios.get(url, { headers });
@@ -194,9 +200,13 @@ export class USign implements INodeType {
 					returnData.push({ json: apiResponse.data });
 					break;
 				case 'put':
-					apiResponse = await axios.put(`${urlBase}/${entity}/${id}`, JSON.parse(updateData), {
-						headers,
-					});
+					apiResponse = await axios.put(
+						`${urlBase}/${entity}/${id}`,
+						JSON.parse(updateData),
+						{
+							headers,
+						},
+					);
 					returnData.push({ json: apiResponse.data });
 					break;
 				default:
